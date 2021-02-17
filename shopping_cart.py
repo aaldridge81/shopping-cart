@@ -57,23 +57,32 @@ while True:
 # Information Output
 #
 
+print("---------------------")
+print("CORNER GROCERY")
+print("www.cornergrocerydc.com")
+print("---------------------")
 
-#print(selected_items)
+print("CHECKOUT AT: ") # TO DO- Add Date and time 
+print("---------------------")
+
+print("PRODUCTS PURCHASED:")
 
 for selected_id in selected_items:
     matching_products = [item for item in products if str(item["id"]) == str(selected_id)]
     matching_product = matching_products[0]
     total_price = total_price + matching_product["price"]
-    print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
+    print(matching_product["name"] + " ..." + to_usd(matching_product["price"]))
+print("---------------------")
 
+print("SUBTOTAL:" + to_usd(total_price))
 
-#for id in selected_items:
-#    matching_products = [item for item in products if str(item["id"]) == str(selected_item)]
-#    matching_product = matching_products[0]
-#    total_price = total_price+ matching_product["price"]
-#    print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
+print("TAX:") # TO DO... Calculate Tax 
 
-print("TOTAL PRICE:" + str(total_price))
+print("TOTAL:") # TO DO... Add totals together 
+
+print("---------------------")
+print("THANK YOU FOR SHOPPING WITH US, SEE YOU AGAIN SOON!")
+print("---------------------")
 
 
 
