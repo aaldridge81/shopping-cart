@@ -41,11 +41,21 @@ def to_usd(my_price):
 
 #print(products)
 
+#
+# Information Input
+#
 
-# select items
+selected_item = input("Please input Product ID (1-20 is valid):")
+selected_item = int(selected_item)
 
-#selected_item = input("Please input Product ID (1-20 is Valid)")
-#selected_item = int(selected_item)
+print(selected_item)
+print(type(selected_item))
+
+
+#
+# Information Output
+#
+
 #
 #matching_products = [item for item in products if item["id"] == selected_item]
 
