@@ -1,4 +1,5 @@
 # shopping_cart.py
+from datetime import datetime
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -45,14 +46,23 @@ def to_usd(my_price):
 # Information Input
 #
 
+# today = date.today()
+# d1 = today.strftime("%B %d, %Y")
+
+now = datetime.now()
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+
 total_price = 0
 selected_items = []
 while True:
     selected_item = input("Please input Product ID (1-20 is valid):")
     if selected_item == "DONE":
         break
-    else:
+    elif int(selected_item) >= 0 and int(selected_item) <= 20:
         selected_items.append(selected_item)
+    else:
+        print("INVALID ITEM, WILL NOT BE TOTALED")
+        exit
 #
 # Information Output
 #
@@ -61,8 +71,8 @@ print("---------------------")
 print("CORNER GROCERY")
 print("www.cornergrocerydc.com")
 print("---------------------")
-
-print("CHECKOUT AT: ") # TO DO- Add Date and time 
+#print(d1)
+print(dt_string)
 print("---------------------")
 
 print("PRODUCTS PURCHASED:")
@@ -72,14 +82,15 @@ for selected_id in selected_items:
     matching_product = matching_products[0]
     total_price = total_price + matching_product["price"]
     print(matching_product["name"] + " ..." + to_usd(matching_product["price"]))
+
+
+tax = .07 * total_price
+amount_due = total_price + tax
+
 print("---------------------")
-
 print("SUBTOTAL:" + to_usd(total_price))
-
-print("TAX:") # TO DO... Calculate Tax 
-
-print("TOTAL:") # TO DO... Add totals together 
-
+print("TAX:" + to_usd(tax))
+print("TOTAL:" + to_usd(amount_due))  
 print("---------------------")
 print("THANK YOU FOR SHOPPING WITH US, SEE YOU AGAIN SOON!")
 print("---------------------")
