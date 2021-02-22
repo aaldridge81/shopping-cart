@@ -46,16 +46,14 @@ def to_usd(my_price):
 # Information Input
 #
 
-# today = date.today()
-# d1 = today.strftime("%B %d, %Y")
 
 now = datetime.now()
-dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+dt_string = now.strftime("%B %d, %Y %H:%M")
 
 total_price = 0
 selected_items = []
 while True:
-    selected_item = input("Please input Product ID (1-20 is valid):")
+    selected_item = input("Please input Product ID (1-20 is valid), when finished, enter 'DONE':")
     if selected_item == "DONE":
         break
     elif int(selected_item) >= 0 and int(selected_item) <= 20:
@@ -71,10 +69,8 @@ print("---------------------")
 print("CORNER GROCERY")
 print("www.cornergrocerydc.com")
 print("---------------------")
-#print(d1)
 print(dt_string)
 print("---------------------")
-
 print("PRODUCTS PURCHASED:")
 
 for selected_id in selected_items:
