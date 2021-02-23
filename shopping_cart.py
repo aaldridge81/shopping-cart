@@ -5,8 +5,6 @@ import os
 from dotenv import load_dotenv
 
 
-
-
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -46,7 +44,6 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-#print(products)
 
 #
 # Information Input
@@ -56,17 +53,27 @@ def to_usd(my_price):
 now = datetime.now()
 dt_string = now.strftime("%B %d, %Y %H:%M")
 
+
 total_price = 0
 selected_items = []
-while True:
-    selected_item = input("Please input Product ID (1-20 is valid), when finished, enter 'DONE':")
-    if selected_item == "DONE":
-        break
-    elif int(selected_item) >= 0 and int(selected_item) <= 20:
-        selected_items.append(selected_item)
-    else:
-        print("INVALID ITEM, WILL NOT BE TOTALED")
-        exit
+
+
+while True:  
+    try:
+        selected_item = input("Please input Product ID (1-20 is valid), when finished, enter 'DONE':")
+        selected_item = selected_item.upper()
+        if selected_item == "DONE":
+            break
+        elif 1 <= int(selected_item) <= 20:
+            selected_items.append(selected_item)      
+        else:
+            raise ValueError()
+    except ValueError:
+        print("please enter a valid input")
+
+
+
+
 #
 # Information Output
 #
