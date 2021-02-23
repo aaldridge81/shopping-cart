@@ -33,14 +33,15 @@ pip install -r requirements.text
 
 ## Setup
 
-In the root directory of your local repository, create a new file called ".env" and update the contents of the ".env" file to comply with your states tax rate:
-        TAX_RATE = .07
+In in the root directory of your local repository, create a new file called ".env", and update the contents of the ".env" file to your states' tax rate:
+
+    TAX_RATE=.05
 
 ## Usage
 To run the program, in the command line:
 
 ```py
-python shopping.cart.py
+python shopping_cart.py
 ```
 
 ## adapted from the "my-first-python-app" README file
