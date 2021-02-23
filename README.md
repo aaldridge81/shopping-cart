@@ -1,5 +1,5 @@
 ## shopping-cart
-Shopping Cart Project to print receipt for customer's at your grocery store
+Shopping Cart Project to print receipt for customers at your grocery store
 
 ## Prerequisites
 
